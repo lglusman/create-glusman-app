@@ -37,8 +37,3 @@ inquirer.prompt(QUESTIONS).then(answers => {
 
   createDirectoryContents(templatePath, projectName);
 });
-
-// console.log('Proyecto creado')
-// console.log(`cd ${answers['project-name']}`)
-// console.log('npm install')
-

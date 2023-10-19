@@ -12,5 +12,5 @@ npm install -g create-glusman-app
 ## Uso
 
 ```bash
-npm create-lgapp
+npx create-lgapp
 ```
