@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/lglusman/create-glusman-app.git"
   },
-  "author": "Leonardo Roese",
+  "author": "Leandro Glusman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lglusman/create-glusman-app/issues"
