@@ -1,11 +1,11 @@
 {
   "name": "create-glusman-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Instalar proyectos desde el cli",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "create-glapp": "./index.js"
+    "create-lgapp": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

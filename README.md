@@ -6,11 +6,11 @@ Crear apps basadas en templates
 ## Installation
 
 ```bash
-npm install -g glapp
+npm install -g create-glusman-app
 ```
 
 ## Uso
 
 ```bash
-npm create glapp
+npm create create-lgapp
 ```
