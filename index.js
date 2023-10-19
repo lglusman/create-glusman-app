@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import inquirer from 'inquirer';
+import color from 'picocolors';
 import * as fs from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -23,7 +24,8 @@ const QUESTIONS = [
     message: 'Nombre del proyecto:',
     validate: function (input) {
       if (/^([A-Za-z\-\\_\d])+$/.test(input)) return true;
-      else return 'El nombre del proyecto solo puede incluir letras, números, guiones bajos y almohadillas(#).';
+      else
+        return 'El nombre del proyecto solo puede incluir letras, números, guiones bajos y almohadillas(#).';
     },
   },
 ];
@@ -34,6 +36,23 @@ inquirer.prompt(QUESTIONS).then(answers => {
   const templatePath = `${__dirname}/templates/${projectChoice}`;
 
   fs.mkdirSync(`${CURR_DIR}/${projectName}`);
-
+  console.log('\n---\n');
+  console.log(`${color.yellow(`Creando proyecto, aguarde...`)}`);
+  console.log('----------------------------');
   createDirectoryContents(templatePath, projectName);
+
+  console.log('');
+  console.log('Proyecto creado');
+  console.log(`cd ${projectName}`);
+  if (projectName.toUpperCase().includes('[TS]')) {
+    console.log('npm install');
+  }
+
+  console.log(`\n${color.yellow(`Proyecto creado:`)}\n`);
+  console.log(`${color.green(`cd`)} ${projectName}`);
+  if (projectName.toUpperCase().includes('[TS]') || projectName.toUpperCase().includes('[JS]')) {
+    console.log(`${color.green(`npm`)} install`);
+    console.log(`${color.green(`npm`)} run dev`);
+  }
+  console.log('\n---\n');
 });

@@ -1,6 +1,6 @@
 {
   "name": "create-glusman-app",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Instalar proyectos desde el cli",
   "main": "index.js",
   "type": "module",
@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/lglusman/create-glusman-app#readme",
   "dependencies": {
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "picocolors": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
