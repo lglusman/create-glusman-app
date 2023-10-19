@@ -1,4 +1,4 @@
-# Create glapp
+# Create lgapp
 
 Crear apps basadas en templates
 
