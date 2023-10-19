@@ -40,17 +40,10 @@ inquirer.prompt(QUESTIONS).then(answers => {
   console.log(`${color.yellow(`Creando proyecto, aguarde...`)}`);
   console.log('----------------------------');
   createDirectoryContents(templatePath, projectName);
-
   console.log('');
-  console.log('Proyecto creado');
-  console.log(`cd ${projectName}`);
-  if (projectName.toUpperCase().includes('[TS]')) {
-    console.log('npm install');
-  }
-
   console.log(`\n${color.yellow(`Proyecto creado:`)}\n`);
   console.log(`${color.green(`cd`)} ${projectName}`);
-  if (projectName.toUpperCase().includes('[TS]') || projectName.toUpperCase().includes('[JS]')) {
+  if (projectChoice.toUpperCase().includes('[TS]') || projectChoice.toUpperCase().includes('[JS]')) {
     console.log(`${color.green(`npm`)} install`);
     console.log(`${color.green(`npm`)} run dev`);
   }
