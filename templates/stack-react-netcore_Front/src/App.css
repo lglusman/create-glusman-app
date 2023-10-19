@@ -1,0 +1,40 @@
+fieldset:disabled {
+  padding: 16px;
+  border: 1px solid rgb(151, 149, 149);
+  border-radius: 8px; 
+  background-color: #6b6b6b34 ;
+  
+}
+
+fieldset {
+  border-radius: 8px; 
+  padding: 16px;
+}
+
+
+legend + * {
+	clear:both;
+}
+
+
+.bouncing-loader {
+  display: flex;
+  justify-content: center;
+}
+
+.bouncing-loader > div {
+  width: 16px;
+  height: 16px;
+  margin: 3px 6px;
+  border-radius: 50%;
+  background-color: #a3a1a1;
+  opacity: 1;
+  animation: bouncing-loader 0.6s infinite alternate;
+}
+
+.imgResponsive {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,72 @@
+type errorStatusDictionary = {
+  [key: number]: string
+}
+
+type errorCodesDictionary = {
+  [key: string]: string
+}
+
+export const errorStatusDictionary: errorStatusDictionary = {
+  400: 'Solicitud incorrecta.',
+  401: 'No autorizado, por favor inicie sesión.',
+  403: 'Prohibido.',
+  404: 'No encontrado.',
+  405: 'Método no permitido.',
+  406: 'No aceptable.',
+  408: 'Solicitud agotada.',
+  409: 'Conflicto.',
+  410: 'No disponible.',
+  411: 'Longitud requerida.',
+  412: 'Precondición fallida.',
+  413: 'Entidad de solicitud demasiado grande.',
+  414: 'URI de solicitud demasiado grande.',
+  415: 'Tipo de medio no soportado.',
+  416: 'Rango no satisfactorio.',
+  417: 'Expectativa fallida.',
+  422: 'Entidad no procesable.',
+  500: 'Error interno del servidor.',
+  501: 'No implementado.',
+  502: 'Puerta de enlace incorrecta.',
+  503: 'Servicio no disponible.',
+  504: 'Puerta de enlace agotada.',
+  505: 'Versión HTTP no soportada.',
+}
+
+export const errorCodesDictionary: errorCodesDictionary = {
+  ERR_NETWORK: 'Error de red.',
+  ERR_ABORTED: 'Solicitud abortada.',
+  ERR_CONNECTION_REFUSED: 'Conexión rechazada.',
+  ERR_CONNECTION_RESET: 'Conexión reiniciada.',
+  ERR_CONNECTION_ABORTED: 'Conexión abortada.',
+  ERR_CONNECTION_CLOSED: 'Conexión cerrada.',
+  ERR_CONNECTION_FAILED: 'Conexión fallida.',
+  ERR_NAME_NOT_RESOLVED: 'Nombre no resuelto.',
+  ERR_INTERNET_DISCONNECTED: 'Internet desconectado.',
+  ERR_TIMED_OUT: 'Tiempo de espera agotado.',
+  ERR_ADDRESS_UNREACHABLE: 'Dirección inalcanzable.',
+  ERR_SSL_PROTOCOL_ERROR: 'Error de protocolo SSL.',
+  ERR_INVALID_URL: 'URL inválida.',
+  ERR_BLOCKED_BY_CLIENT: 'Bloqueado por el cliente.',
+  ERR_DISALLOWED_URL_SCHEME: 'Esquema de URL no permitido.',
+  ERR_ADDRESS_INVALID: 'Dirección inválida.',
+  ERR_EMPTY_RESPONSE: 'Respuesta vacía.',
+  ERR_FILE_NOT_FOUND: 'Archivo no encontrado.',
+  ERR_UNKNOWN_URL_SCHEME: 'Esquema de URL desconocido.',
+  ERR_UNSAFE_PORT: 'Puerto inseguro.',
+  ERR_TOO_MANY_REDIRECTS: 'Demasiadas redirecciones.',
+  ERR_UNEXPECTED_PAGE: 'Página inesperada.',
+  ERR_INVALID_RESPONSE: 'Respuesta inválida.',
+  ERR_INVALID_CHUNKED_ENCODING: 'Codificación fragmentada inválida.',
+  ERR_METHOD_NOT_SUPPORTED: 'Método no soportado.',
+  ERR_UNEXPECTED_PROXY_AUTH: 'Autenticación de proxy inesperada.',
+  ERR_EMPTY_PROXY_LIST: 'Lista de proxy vacía.',
+  ERR_PROXY_CONNECTION_FAILED: 'Conexión de proxy fallida.',
+  ERR_UNEXPECTED_CACHE_READ: 'Lectura de caché inesperada.',
+  ERR_SSL_CLIENT_AUTH_CERT_NEEDED: 'Se necesita certificado de autenticación de cliente SSL.',
+  ERR_CACHE_MISS: 'Cache perdido.',
+  ERR_INSECURE_RESPONSE: 'Respuesta insegura.',
+  ERR_TEMPORARILY_THROTTLED: 'Temporalmente limitado.',
+  ERR_INVALID_HTTP_RESPONSE: 'Respuesta HTTP inválida.',
+  ERR_INVALID_HTTP_REQUEST: 'Solicitud HTTP inválida.',
+  ERR_UNKNOWN: 'Error desconocido.',
+}
