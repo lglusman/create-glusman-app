@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Connection", "Connection\Connection.vbproj", "{AB82B132-436B-486D-AF1A-5F7B94E9AF24}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "StackCreator", "StackCreator\StackCreator.vbproj", "{806348D0-39F5-4E69-80DF-2A3EA3084992}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB82B132-436B-486D-AF1A-5F7B94E9AF24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB82B132-436B-486D-AF1A-5F7B94E9AF24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB82B132-436B-486D-AF1A-5F7B94E9AF24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB82B132-436B-486D-AF1A-5F7B94E9AF24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806348D0-39F5-4E69-80DF-2A3EA3084992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806348D0-39F5-4E69-80DF-2A3EA3084992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806348D0-39F5-4E69-80DF-2A3EA3084992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806348D0-39F5-4E69-80DF-2A3EA3084992}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7786F73-EA54-47D4-A9F2-93B935702059}
+	EndGlobalSection
+EndGlobal

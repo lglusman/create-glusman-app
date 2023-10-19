@@ -1,0 +1,37 @@
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import { use$entidadMayusculaPlural$ } from '../../services'
+import { comboProps } from '../../Types/combotypes'
+
+export const Combo = ({ value, name, disabled, bind }: comboProps) => {
+  const { TraerTodos } = use$entidadMayusculaPlural$()
+
+  const { data, isFetching } = TraerTodos({cant: 0, orden: '$descripcion$'})
+
+  if (isFetching) return <div>Cargando...</div>
+
+  return (
+    <>
+      <FormControl fullWidth>
+        <InputLabel id="cbo$entidadMinusculaSingular$lbl">$entidadMinusculaSingular$</InputLabel>
+        <Select
+          size='small'
+          disabled={disabled}
+          labelId="cbo$entidadMinusculaSingular$lbl"
+          id="cbo$entidadMinusculaSingular$"
+          name={name}
+          value={value}
+          autoWidth
+          label="$entidadMinusculaSingular$"
+          {...bind}
+        >
+          <MenuItem value={'0'}>--Seleccione--</MenuItem>
+          {data?.data?.map((item) => {
+            return <MenuItem 
+            key={item.id}
+            value={item.id.toString()}>{item.$descripcion$}</MenuItem>
+          })}
+        </Select>
+      </FormControl>
+    </>
+  )
+}

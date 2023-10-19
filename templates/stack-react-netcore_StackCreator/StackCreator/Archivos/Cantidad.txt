@@ -1,0 +1,13 @@
+import { TextField } from "@mui/material"
+import { use$entidadMayusculaPlural$Store } from "../../services/Stores/use$entidadMayusculaPlural$Store"
+
+export const Cantidad = () => {
+  const cantidad = use$entidadMayusculaPlural$Store((state) => state.Opciones.cant)
+  const setCantidad = use$entidadMayusculaPlural$Store((state) => state.SetCantidad)
+
+  return (
+    <>
+      <TextField label="Cantidad" value={cantidad} size="small" onChange={(e) => setCantidad(Number(e.target.value))} />
+    </>
+  )
+}

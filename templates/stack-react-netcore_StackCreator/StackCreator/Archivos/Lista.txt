@@ -1,0 +1,42 @@
+import SearchIcon from '@mui/icons-material/Search'
+import {
+  IconButton,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+} from '@mui/material'
+import { use$entidadMayusculaPlural$Store } from '../../services/Stores/use$entidadMayusculaPlural$Store'
+export const Lista = () => {
+  const Lista$entidadMayusculaPlural$ = use$entidadMayusculaPlural$Store((state) => state.Lista)
+  const Selecionar = use$entidadMayusculaPlural$Store((state) => state.Selecionar)
+
+  if (!Lista$entidadMayusculaPlural$?.data.length) return <Typography variant="h6">No se encontraron datos</Typography>
+
+  return (
+    <TableContainer component={Paper}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Sel.</TableCell>
+$ths$          </TableRow>
+        </TableHead>
+        <TableBody>
+          {Lista$entidadMayusculaPlural$?.data.map(($entidadMinusculaSingular$) => (
+            <TableRow key={$entidadMinusculaSingular$.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+              <TableCell>
+                <IconButton onClick={() => Selecionar($entidadMinusculaSingular$)} size="small" sx={{ p: 0 }}>
+                  <SearchIcon />
+                </IconButton>
+              </TableCell>
+$cels$            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  )
+}

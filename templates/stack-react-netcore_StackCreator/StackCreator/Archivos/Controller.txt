@@ -1,0 +1,173 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using WebApi.Models;
+using WebApi.Models.DTOs;
+
+namespace WebApi.Controllers
+{
+    [Authorize]
+    [Route("api/[controller]")]
+    [ApiController]
+    public class $entidadplural$Controller : ControllerBase
+    {
+
+        private readonly Db$$Db$$ _context;
+
+        public $entidadplural$Controller(Db$$Db$$ context)
+        {
+            _context = context;
+        }
+
+        // GET: api/$entidadplural$
+        [Authorize]
+        [HttpGet]
+        public wsResponse Get$entidadplural$()
+        {
+            var ws = new wsResponse();
+            try
+            {
+                var lista = _context.$entidadplural$
+                    .ToList();
+
+
+                var listaDTO = new List<$entidadsingular$DTO>();
+                foreach (var item in lista)
+                {
+                    listaDTO.Add(item.ToDTO());
+                }
+                ws.data = listaDTO;
+            }
+            catch (Exception ex)
+            {
+                ws.resultadoOk = false;
+                ws.mensaje = ex.Message;
+                ws.data = "";
+            }
+            return ws;
+        }
+
+        // GET: api/$entidadplural$/5
+        [HttpGet("{id}")]
+        public wsResponse Get$entidadsingular$(int id)
+        {
+            var ws = new wsResponse();
+            try
+            {
+                ws.data = _context.$entidadplural$.Find(id).ToDTO();
+            }
+            catch (Exception ex)
+            {
+                ws.resultadoOk = false;
+                ws.mensaje = ex.Message;
+                ws.data = "";
+            }
+            return ws;
+
+        }
+       
+        // PUT: api/$entidadplural$/5
+        [HttpPut]
+        public async Task<wsResponse> Put$entidadsingular$($entidadsingular$DTO entidadDTO)
+        {
+            var ws = new wsResponse();
+            try
+            {
+                //var entidad = $entidadsingular$.FromDTO(entidadDTO);
+                var entidad = entidadDTO.ToEntity();
+
+                entidad.IdUsuarioModifica = int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                entidad.FechaModifica = DateTime.Now;
+                _context.Entry(entidad).State = EntityState.Modified;
+                _context.Entry(entidad).Property(x => x.FechaAlta).IsModified = false;
+                _context.Entry(entidad).Property(x => x.IdUsuarioAlta).IsModified = false;
+
+                try
+                {
+                    await _context.SaveChangesAsync();
+                    ws.data = entidad.ToDTO();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!$entidadsingular$Exists(entidad.Id))
+                    {
+                        ws.resultadoOk = false;
+                        ws.mensaje = "NotFound";
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                ws.resultadoOk = false;
+                ws.mensaje = ex.Message;
+                ws.data = "";
+            }
+
+            return ws;
+        }
+
+        // POST: api/$entidadplural$
+        [HttpPost]
+        public async Task<wsResponse> Post$entidadsingular$($entidadsingular$DTO entidadDTO)
+        {
+            var ws = new wsResponse();
+            try
+            {
+
+                entidadDTO.FechaAlta = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
+                var entidad = entidadDTO.ToEntity();
+                entidad.IdUsuarioAlta = int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                _context.$entidadplural$.Add(entidad);
+                await _context.SaveChangesAsync();
+                ws.data = entidad.ToDTO();
+            }
+            catch (Exception ex)
+            {
+                ws.resultadoOk = false;
+                ws.mensaje = ex.Message;
+                ws.data = "";
+            }
+            return ws;
+        }
+
+        // DELETE: api/$entidadplural$/5
+        [HttpDelete("{id}")]
+        public async Task<wsResponse> Delete$entidadsingular$(int id)
+        {
+            var ws = new wsResponse();
+            try
+            {
+                var entidad = await _context.$entidadplural$.FindAsync(id);
+                if (entidad == null)
+                {
+                    ws.resultadoOk = false;
+                    ws.mensaje = "NotFound";
+                }
+                else
+                {
+                    _context.$entidadplural$.Remove(entidad);
+                    await _context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                ws.resultadoOk = false;
+                ws.mensaje = ex.Message;
+                ws.data = "";
+            }
+            return ws;
+        }
+
+        private bool $entidadsingular$Exists(int id)
+        {
+            return _context.$entidadplural$.Any(e => e.Id == id);
+        }
+    }
+}
+

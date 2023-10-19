@@ -1,0 +1,13 @@
+import { use$entidadMayusculaPlural$Store } from "../../services/Stores/use$entidadMayusculaPlural$Store"
+
+export const Seleccionado = () => {
+  const Seleccionado = use$entidadMayusculaPlural$Store((state) => state.Seleccionado)
+
+  return (
+    <pre>
+    {
+      JSON.stringify(Seleccionado, null, 2)
+    }
+    </pre>
+  )
+}

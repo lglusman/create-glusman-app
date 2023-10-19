@@ -14,16 +14,16 @@ const QUESTIONS = [
   {
     name: 'project-choice',
     type: 'list',
-    message: 'What project template would you like to generate?',
+    message: 'Que proyecto desea generar?',
     choices: CHOICES,
   },
   {
     name: 'project-name',
     type: 'input',
-    message: 'Project name:',
+    message: 'Nombre del proyecto:',
     validate: function (input) {
       if (/^([A-Za-z\-\\_\d])+$/.test(input)) return true;
-      else return 'Project name may only include letters, numbers, underscores and hashes.';
+      else return 'El nombre del proyecto solo puede incluir letras, números, guiones bajos y almohadillas(#).';
     },
   },
 ];
@@ -37,3 +37,8 @@ inquirer.prompt(QUESTIONS).then(answers => {
 
   createDirectoryContents(templatePath, projectName);
 });
+
+// console.log('Proyecto creado')
+// console.log(`cd ${answers['project-name']}`)
+// console.log('npm install')
+
