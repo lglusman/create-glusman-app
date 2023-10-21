@@ -16,9 +16,9 @@ namespace WebApi.Controllers
     public class SitiosController : ControllerBase
     {
 
-        private readonly DbInfraestructura _context;
+        private readonly DbSindicatoDB _context;
 
-        public SitiosController(DbInfraestructura context)
+        public SitiosController(DbSindicatoDB context)
         {
             _context = context;
         }

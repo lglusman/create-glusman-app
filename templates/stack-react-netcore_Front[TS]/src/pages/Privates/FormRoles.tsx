@@ -1,4 +1,5 @@
-import { Formulario } from '../../components/Roles'
+import { Formulario } from "../../components/Roles"
+
 export const FormRoles = () => {
   return <Formulario />
 }

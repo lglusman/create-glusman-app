@@ -17,7 +17,7 @@ export const Autocompletar = ({ titulo }: AutocompletarProps) => {
 
   return (
     <Autocomplete
-      size="small"
+      size="medium"
       noOptionsText="sin resultados..."
       fullWidth
       onChange={(_: React.SyntheticEvent<Element, Event>, newValue: RolPermiso | null) => {
@@ -36,13 +36,13 @@ export const Autocompletar = ({ titulo }: AutocompletarProps) => {
         setOpen(false)
       }}
       isOptionEqualToValue={(option, value) => option.id === value.id}
-      getOptionLabel={(option) => option.rolId}
+      getOptionLabel={(option) => option.id.toString()}
       options={query.data?.data || []}
       loading={query.isLoading}
       renderOption={(props, option) => {
         return (
           <li {...props} key={option.id}>
-            {option.rolId}
+            {option.id}
           </li>
         )
       }}

@@ -7,9 +7,9 @@ public partial class Permiso
 {
     public int Id { get; set; }
 
-    public string DescripcionPermiso { get; set; } = null!;
-
     public int SitioId { get; set; }
+
+    public string DescripcionPermiso { get; set; } = null!;
 
     public string Url { get; set; } = null!;
 

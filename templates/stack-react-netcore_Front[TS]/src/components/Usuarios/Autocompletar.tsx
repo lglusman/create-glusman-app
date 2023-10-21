@@ -17,7 +17,7 @@ export const Autocompletar = ({ titulo }: AutocompletarProps) => {
 
   return (
     <Autocomplete
-      size="small"
+      size="medium"
       noOptionsText="sin resultados..."
       fullWidth
       onChange={(_: React.SyntheticEvent<Element, Event>, newValue: Usuario | null) => {

@@ -8,21 +8,18 @@ import Home from './pages/Privates/Home'
 
 import 'sweetalert2/dist/sweetalert2.min.css'
 import './App.css'
-import { TokenExpirado } from './pages/Publics/TokenExpirado'
-import Welcome from './pages/Publics/Welcome'
-import interceptorSetup from './services/interceptorSetup'
 import { Login } from './components/Login/Login'
 import { Redirect } from './components/Login/Redirect'
 import { FormPermisos } from './pages/Privates/FormPermisos'
-import { FormRolesPermisos } from './pages/Privates/FormRolespermisos'
+import { FormRoles } from './pages/Privates/FormRoles'
+import { FormRolesPermisos } from './pages/Privates/FormRolesPermisos'
 import { FormSitios } from './pages/Privates/FormSitios'
 import { FormUsuarios } from './pages/Privates/FormUsuarios'
-import { FormUsuariosRoles } from './pages/Privates/FormusUariosRoles'
-import { FormTiposDeObra } from './pages/Privates/FormTiposDeObra'
-import { FormEdificios } from './pages/Privates/FormEdificios'
-import { FormPresupuestos } from './pages/Privates/FormPresupuestos'
-import { FormRoles } from './pages/Privates/FormRoles'
+import { FormUsuariosRoles } from './pages/Privates/FormUsuariosRoles'
+import { TokenExpirado } from './pages/Publics/TokenExpirado'
+import Welcome from './pages/Publics/Welcome'
 import { useUserStore } from './services/Stores/useUserStore'
+import interceptorSetup from './services/interceptorSetup'
 
 const ThemeContext = createContext<string>('')
 
@@ -54,14 +51,11 @@ export const App = () => {
               <Route element={<ProtectRoutes />}>
                 <Route path="home" element={<Home />} />
                 <Route path="permisos" element={<FormPermisos />} />
-                <Route path="roles" element={<FormRoles />} />
                 <Route path="rolespermisos" element={<FormRolesPermisos />} />
                 <Route path="sitios" element={<FormSitios />} />
                 <Route path="usuarios" element={<FormUsuarios />} />
+                <Route path="roles" element={<FormRoles />} />
                 <Route path="usuariosroles" element={<FormUsuariosRoles />} />
-                <Route path="tiposdeobra" element={<FormTiposDeObra />} />
-                <Route path="edificios" element={<FormEdificios />} />
-                <Route path="presupuestos" element={<FormPresupuestos />} />
               </Route>
               <Route path="*" element={<Page404 />} />
             </Route>

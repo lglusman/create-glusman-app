@@ -100,7 +100,7 @@ export const Layout = ({ titulo = 'Título aquí' }) => {
             {titulo}
           </Typography>
           <IconButton color="inherit" onClick={() => handleDarkMode()}>
-            {darkMode ? <Brightness7 fontSize="small" /> : <Brightness4 fontSize="small" />}
+            {darkMode ? <Brightness7 fontSize="medium" /> : <Brightness4 fontSize="medium" />}
           </IconButton>
           <UserMenu />
         </Toolbar>
@@ -135,6 +135,7 @@ export const Layout = ({ titulo = 'Título aquí' }) => {
             <LinkConPermiso to="sitios">Sitios</LinkConPermiso>
             <LinkConPermiso to="usuarios">Usuarios</LinkConPermiso>
             <LinkConPermiso to="usuariosroles">Usuarios / Roles</LinkConPermiso>
+            <LinkConPermiso to="empresas">Empresas</LinkConPermiso>
           </List>
         </nav>
         <Divider />

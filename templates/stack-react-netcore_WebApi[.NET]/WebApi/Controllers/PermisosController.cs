@@ -16,9 +16,9 @@ namespace WebApi.Controllers
     public class PermisosController : ControllerBase
     {
 
-        private readonly DbInfraestructura _context;
+        private readonly DbSindicatoDB _context;
 
-        public PermisosController(DbInfraestructura context)
+        public PermisosController(DbSindicatoDB context)
         {
             _context = context;
         }

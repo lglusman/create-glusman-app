@@ -16,9 +16,9 @@ namespace WebApi.Controllers
     public class RolesPermisosController : ControllerBase
     {
 
-        private readonly DbInfraestructura _context;
+        private readonly DbSindicatoDB _context;
 
-        public RolesPermisosController(DbInfraestructura context)
+        public RolesPermisosController(DbSindicatoDB context)
         {
             _context = context;
         }
@@ -73,39 +73,39 @@ namespace WebApi.Controllers
 
         }
 
-        [HttpGet("{busqueda}")]
-        public wsResponse GetRolesPermisosBusqueda(string busqueda, [FromQuery] string inc = "", [FromQuery] int cant = 0, [FromQuery] int pag = 0, [FromQuery] string orden = "")
-        {
-            var ws = new wsResponse();
-            try
-            {
-                if (busqueda.EndsWith("__ax"))
-                {
-                    var buscar = busqueda.Replace("__ax", "");
-                    var query = _context.RolesPermisos.Where(x => x.RolId.ToString() == buscar);
+        //[HttpGet("{busqueda}")]
+        //public wsResponse GetRolesPermisosBusqueda(string busqueda, [FromQuery] string inc = "", [FromQuery] int cant = 0, [FromQuery] int pag = 0, [FromQuery] string orden = "")
+        //{
+        //    var ws = new wsResponse();
+        //    try
+        //    {
+        //        if (busqueda.EndsWith("__ax"))
+        //        {
+        //            var buscar = busqueda.Replace("__ax", "");
+        //            var query = _context.RolesPermisos.Where(x => x.RolId.ToUpper().Contains(buscar));
 
-                    if (orden == "")
-                        orden = "Id";
+        //            if (orden == "")
+        //                orden = "Id";
 
-                    QueryHelper<RolPermiso> qh = new(_context, query, inc, orden, pag, cant);
-                    ws.Data = qh.Data;
-                }
-                else
-                {
-                    ws.ResultadoOk = false;
-                    ws.Data = new Paginacion();
-                    ws.Mensaje = "Busqueda erronea";
-                }
-            }
-            catch (Exception ex)
-            {
-                ws.ResultadoOk = false;
-                ws.Mensaje = ex.Message;
-                ws.Data = new Paginacion();
-            }
-            return ws;
+        //            QueryHelper<RolPermiso> qh = new(_context, query, inc, orden, pag, cant);
+        //            ws.Data = qh.Data;
+        //        }
+        //        else
+        //        {
+        //            ws.ResultadoOk = false;
+        //            ws.Data = new Paginacion();
+        //            ws.Mensaje = "Busqueda erronea";
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ws.ResultadoOk = false;
+        //        ws.Mensaje = ex.Message;
+        //        ws.Data = new Paginacion();
+        //    }
+        //    return ws;
 
-        }
+        //}
 
         // PUT: api/RolesPermisos/5
         [HttpPut]

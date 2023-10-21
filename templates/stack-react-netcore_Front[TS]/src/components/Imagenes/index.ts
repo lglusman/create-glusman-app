@@ -1,5 +1,0 @@
-export * from './AgregarImagen'
-export * from './Carrusel'
-export * from './ListaImagenes'
-export * from './VerImagen'
-export * from './index'

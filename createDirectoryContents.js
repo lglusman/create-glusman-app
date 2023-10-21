@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 const CURR_DIR = process.cwd();
 
-const createDirectoryContents = (templatePath, newProjectPath) => {
+const createDirectoryContents = (templatePath, newProjectPath, projectname) => {
   const filesToCreate = fs.readdirSync(templatePath);
 
   filesToCreate.forEach(file => {
@@ -13,16 +13,18 @@ const createDirectoryContents = (templatePath, newProjectPath) => {
     if (stats.isFile()) {
       const contents = fs.readFileSync(origFilePath, 'utf8');
 
+      const finalcontents = contents.replace(/{{name}}/g, projectname);
+
       // Rename
       if (file === '.npmignore') file = '.gitignore';
 
       const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
-      fs.writeFileSync(writePath, contents, 'utf8');
+      fs.writeFileSync(writePath, finalcontents, 'utf8');
     } else if (stats.isDirectory()) {
       fs.mkdirSync(`${CURR_DIR}/${newProjectPath}/${file}`);
 
       // recursive call
-      createDirectoryContents(`${templatePath}/${file}`, `${newProjectPath}/${file}`);
+      createDirectoryContents(`${templatePath}/${file}`, `${newProjectPath}/${file}`, projectname);
     }
   });
 };

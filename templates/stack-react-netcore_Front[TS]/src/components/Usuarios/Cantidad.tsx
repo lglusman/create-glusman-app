@@ -7,7 +7,7 @@ export const Cantidad = () => {
 
   return (
     <>
-      <TextField label="Cantidad" value={cantidad} size="small" onChange={(e) => setCantidad(Number(e.target.value))} />
+      <TextField label="Cantidad" value={cantidad} size="medium" onChange={(e) => setCantidad(Number(e.target.value))} />
     </>
   )
 }

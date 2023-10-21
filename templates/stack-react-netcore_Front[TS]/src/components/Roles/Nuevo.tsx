@@ -39,7 +39,7 @@ export const Nuevo = () => {
       <form onSubmit={handleGuardarRol}>
         <Grid container justifyContent="start" alignItems="center" spacing={1}>
           <Grid item xs={4}>
-            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.descripcionRol} size='small' name={'descripcionRol'} label='descripcionRol' variant='outlined' />
+            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.descripcionRol} size="medium" name={'descripcionRol'} label='descripcionRol' variant='outlined' />
           </Grid>
           <Grid item xs={1}>
             <Button variant="contained" type="submit">

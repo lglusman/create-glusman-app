@@ -66,13 +66,13 @@ export const UserMenu = () => {
       >
         <MenuItem onClick={handleVolverAlPortal}>
           <ListItemIcon>
-            <Home fontSize="small" />
+            <Home fontSize="medium" />
           </ListItemIcon>
           Volver al portal
         </MenuItem>
         <MenuItem onClick={handleCerrarSesion}>
           <ListItemIcon>
-            <Logout fontSize="small" />
+            <Logout fontSize="medium" />
           </ListItemIcon>
           Cerrar sesión
         </MenuItem>

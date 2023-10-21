@@ -63,7 +63,8 @@ export function usePermisos() {
       }
     },
     onError: (err) => {
-      alertError(err)
+      if (err instanceof Error) alertError(err.message)
+      else if (typeof err === 'string') alertError(err)
     },
   })
   const { mutate: Eliminar } = useMutation({
@@ -73,7 +74,8 @@ export function usePermisos() {
       alertSuccess('Entidad guardada correctamente')
     },
     onError: (err) => {
-      alertError(err)
+      if (err instanceof Error) alertError(err.message)
+      else if (typeof err === 'string') alertError(err)
     },
   })
   return {

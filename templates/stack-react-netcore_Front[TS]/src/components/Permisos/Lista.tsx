@@ -24,8 +24,8 @@ export const Lista = () => {
           <TableRow>
             <TableCell>Sel.</TableCell>
             <TableCell>id</TableCell>
-            <TableCell>descripcionPermiso</TableCell>
             <TableCell>sitioId</TableCell>
+            <TableCell>descripcionPermiso</TableCell>
             <TableCell>url</TableCell>
             <TableCell>posicion</TableCell>
           </TableRow>
@@ -34,13 +34,13 @@ export const Lista = () => {
           {ListaPermisos?.data.map((permiso) => (
             <TableRow key={permiso.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell>
-                <IconButton onClick={() => Selecionar(permiso)} size="small" sx={{ p: 0 }}>
+                <IconButton onClick={() => Selecionar(permiso)} size="medium" sx={{ p: 0 }}>
                   <SearchIcon />
                 </IconButton>
               </TableCell>
             <TableCell>{permiso.id}</TableCell>
-            <TableCell>{permiso.descripcionPermiso}</TableCell>
             <TableCell>{permiso.sitioId}</TableCell>
+            <TableCell>{permiso.descripcionPermiso}</TableCell>
             <TableCell>{permiso.url}</TableCell>
             <TableCell>{permiso.posicion}</TableCell>
             </TableRow>

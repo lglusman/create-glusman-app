@@ -1,4 +1,3 @@
-export * from './Imagenes'
 export * from './Login'
 export * from './UI/Alert'
 export * from './UI/Dates'

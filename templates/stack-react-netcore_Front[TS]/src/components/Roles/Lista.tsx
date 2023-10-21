@@ -31,7 +31,7 @@ export const Lista = () => {
           {ListaRoles?.data.map((rol) => (
             <TableRow key={rol.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell>
-                <IconButton onClick={() => Selecionar(rol)} size="small" sx={{ p: 0 }}>
+                <IconButton onClick={() => Selecionar(rol)} size="medium" sx={{ p: 0 }}>
                   <SearchIcon />
                 </IconButton>
               </TableCell>

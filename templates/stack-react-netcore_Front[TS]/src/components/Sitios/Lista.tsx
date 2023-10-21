@@ -33,7 +33,7 @@ export const Lista = () => {
           {ListaSitios?.data.map((sitio) => (
             <TableRow key={sitio.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell>
-                <IconButton onClick={() => Selecionar(sitio)} size="small" sx={{ p: 0 }}>
+                <IconButton onClick={() => Selecionar(sitio)} size="medium" sx={{ p: 0 }}>
                   <SearchIcon />
                 </IconButton>
               </TableCell>

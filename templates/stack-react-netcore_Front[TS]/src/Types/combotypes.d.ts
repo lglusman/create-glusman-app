@@ -4,7 +4,7 @@ export type comboProps = {
   name?: string
   onChange?: (id: number) => void
   disabled?: boolean
-  bind: ChangeEvent<HTMLInputElement>
+  bind?: ChangeEvent<HTMLInputElement>
 }
 
 interface InputProps

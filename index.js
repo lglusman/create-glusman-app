@@ -12,7 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const CHOICES = fs.readdirSync(`${__dirname}/templates`);
 
 const THECHOICES = CHOICES.map(x => ({
-  title: x.split('[')[0].replaceAll('-', ' ').replaceAll('_', ' '),
+  name: x.split('[')[0].replaceAll('-', ' ').replaceAll('_', ' '),
   value: x,
 }));
 
@@ -43,7 +43,7 @@ inquirer.prompt(QUESTIONS).then(answers => {
   fs.mkdirSync(`${CURR_DIR}/${projectName}`);
   console.log(`${color.yellow(`Creando proyecto, aguarde...`)}`);
   console.log('----------------------------');
-  createDirectoryContents(templatePath, projectName);
+  createDirectoryContents(templatePath, projectName, projectName);
   console.log('');
   console.log(`\n${color.yellow(`Proyecto creado:`)}\n`);
   console.log(`${color.green(`cd`)} ${projectName}`);

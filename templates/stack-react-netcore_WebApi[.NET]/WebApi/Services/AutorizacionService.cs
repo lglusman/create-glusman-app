@@ -15,10 +15,10 @@ namespace WebApi.Services
 {
     public class AutorizacionService : IAutorizacionService
     {
-        private readonly DbInfraestructura _context;
+        private readonly DbSindicatoDB _context;
         private readonly IConfiguration _configuration;
 
-        public AutorizacionService(DbInfraestructura context, IConfiguration configuration)
+        public AutorizacionService(DbSindicatoDB context, IConfiguration configuration)
         {
             _context = context;
             _configuration = configuration;
@@ -80,8 +80,8 @@ namespace WebApi.Services
             string tokenCreado = GenerarToken(usuario_encontrado);
 
 
+            //return new AutorizacionResponse() { Token = tokenCreado, Usuario = usuario_encontrado };
             return new AutorizacionResponse() { Token = tokenCreado, Usuario = usuario_encontrado.ToDTO() };
-            //return new AutorizacionResponse() { Token = tokenCreado, Usuario = usuario_encontrado.ToDTO() };
 
 
 

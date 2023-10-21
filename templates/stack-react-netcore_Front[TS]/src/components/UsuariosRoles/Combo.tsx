@@ -2,7 +2,7 @@ import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import { useUsuariosRoles } from '../../services'
 import { comboProps } from '../../Types/combotypes'
 
-export const Combo = ({ value, name, disabled, bind }: comboProps) => {
+export const Combo = ({ value = 0, name, disabled, bind }: comboProps) => {
   const { TraerTodos } = useUsuariosRoles()
 
   const { data, isFetching } = TraerTodos({cant: 0, orden: 'usuarioId'})
@@ -14,7 +14,7 @@ export const Combo = ({ value, name, disabled, bind }: comboProps) => {
       <FormControl fullWidth>
         <InputLabel id="cbousuariorollbl">usuariorol</InputLabel>
         <Select
-          size='small'
+          size="medium"
           disabled={disabled}
           labelId="cbousuariorollbl"
           id="cbousuariorol"

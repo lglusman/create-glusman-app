@@ -1,27 +1,7 @@
 USE [Infraestructura]
 GO
 
-/****** Object:  StoredProcedure [dbo].[usp_getTables]    Script Date: 17/9/2023 17:34:29 ******/
-DROP PROCEDURE [dbo].[usp_getTables]
-GO
-
-/****** Object:  StoredProcedure [dbo].[usp_getColumns]    Script Date: 17/9/2023 17:34:29 ******/
-DROP PROCEDURE [dbo].[usp_getColumns]
-GO
-
-/****** Object:  StoredProcedure [dbo].[usp_createTypescriptEntity]    Script Date: 17/9/2023 17:34:29 ******/
-DROP PROCEDURE [dbo].[usp_createTypescriptEntity]
-GO
-
-/****** Object:  StoredProcedure [dbo].[usp_createTypescript_row]    Script Date: 17/9/2023 17:34:29 ******/
-DROP PROCEDURE [dbo].[usp_createTypescript_row]
-GO
-
-/****** Object:  StoredProcedure [dbo].[usp_createDTO_row]    Script Date: 17/9/2023 17:34:29 ******/
-DROP PROCEDURE [dbo].[usp_createDTO_row]
-GO
-
-/****** Object:  StoredProcedure [dbo].[usp_createDTO_row]    Script Date: 17/9/2023 17:34:29 ******/
+/****** Object:  StoredProcedure [dbo].[usp_createDTO_row]    Script Date: 15/9/2023 23:48:12 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -354,7 +334,7 @@ select @strResult
 END
 GO
 
-/****** Object:  StoredProcedure [dbo].[usp_createTypescript_row]    Script Date: 17/9/2023 17:34:29 ******/
+/****** Object:  StoredProcedure [dbo].[usp_createTypescript_row]    Script Date: 15/9/2023 23:48:12 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -516,7 +496,7 @@ select @strResult
 END
 GO
 
-/****** Object:  StoredProcedure [dbo].[usp_createTypescriptEntity]    Script Date: 17/9/2023 17:34:29 ******/
+/****** Object:  StoredProcedure [dbo].[usp_createTypescriptEntity]    Script Date: 15/9/2023 23:48:12 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -709,12 +689,12 @@ set @functions +='//    }'
 set @functions +='//    const ret = await doGet(`/' + @tableName + '/${busqueda}__ax?inc=${inc}&cant=${cant}&pag=${pag}&orden=${orden}`)'
 set @functions +='//     return ret'
 set @functions +='//   }'
-set @functions +='//   static async Guardar(entidad: ' + @singular + ') {'
+set @functions +='//   async Guardar() {'
 set @functions +='//      let resp: Paginacion<' + @singular + '>'
-set @functions +='//      if (entidad.id > 0) {'
-set @functions +='//         resp = await doPut(`/' + @tableName + '`, entidad)'
+set @functions +='//      if (this.id > 0) {'
+set @functions +='//         resp = await doPut(`/' + @tableName + '`, this)'
 set @functions +='//      } else {'
-set @functions +='//         resp = await doPost(`/' + @tableName + '`, entidad)'
+set @functions +='//         resp = await doPost(`/' + @tableName + '`, this)'
 set @functions +='//      }'
 set @functions +='//      return resp'
 set @functions +='//   }'
@@ -736,7 +716,7 @@ select @strResult
 END
 GO
 
-/****** Object:  StoredProcedure [dbo].[usp_getColumns]    Script Date: 17/9/2023 17:34:29 ******/
+/****** Object:  StoredProcedure [dbo].[usp_getColumns]    Script Date: 15/9/2023 23:48:12 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -817,7 +797,7 @@ and cols.name not in
 END
 GO
 
-/****** Object:  StoredProcedure [dbo].[usp_getTables]    Script Date: 17/9/2023 17:34:29 ******/
+/****** Object:  StoredProcedure [dbo].[usp_getTables]    Script Date: 15/9/2023 23:48:12 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -848,4 +828,5 @@ where t.name <> 'sysdiagrams'
 order by SCHEMA_ID, name
 END
 GO
+
 

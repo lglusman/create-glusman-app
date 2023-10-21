@@ -40,16 +40,16 @@ export const Nuevo = () => {
       <form onSubmit={handleGuardarPermiso}>
         <Grid container justifyContent="start" alignItems="center" spacing={1}>
           <Grid item xs={4}>
-            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.descripcionPermiso} size='small' name={'descripcionPermiso'} label='descripcionPermiso' variant='outlined' />
-          </Grid>
-          <Grid item xs={4}>
             <ComboSitio name={'sitioId'} value={state?.sitioId} bind={bind} />
           </Grid>
           <Grid item xs={4}>
-            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.url} size='small' name={'url'} label='url' variant='outlined' />
+            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.descripcionPermiso} size="medium" name={'descripcionPermiso'} label='descripcionPermiso' variant='outlined' />
           </Grid>
           <Grid item xs={4}>
-            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.posicion} size='small' name={'posicion'} label='posicion' variant='outlined' />
+            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.url} size="medium" name={'url'} label='url' variant='outlined' />
+          </Grid>
+          <Grid item xs={4}>
+            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.posicion} size="medium" name={'posicion'} label='posicion' variant='outlined' />
           </Grid>
           <Grid item xs={1}>
             <Button variant="contained" type="submit">

@@ -39,13 +39,13 @@ export const Nuevo = () => {
       <form onSubmit={handleGuardarUsuario}>
         <Grid container justifyContent="start" alignItems="center" spacing={1}>
           <Grid item xs={4}>
-            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.nombre} size='small' name={'nombre'} label='nombre' variant='outlined' />
+            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.nombre} size="medium" name={'nombre'} label='nombre' variant='outlined' />
           </Grid>
           <Grid item xs={4}>
-            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.userName} size='small' name={'userName'} label='userName' variant='outlined' />
+            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.userName} size="medium" name={'userName'} label='userName' variant='outlined' />
           </Grid>
           <Grid item xs={4}>
-            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.password} size='small' name={'password'} label='password' variant='outlined' />
+            <TextField fullWidth InputLabelProps={{ shrink: true }} {...bind} value={state?.password} size="medium" name={'password'} label='password' variant='outlined' />
           </Grid>
           <Grid item xs={1}>
             <Button variant="contained" type="submit">

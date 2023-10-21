@@ -37,7 +37,7 @@ export const Busqueda = () => {
         <div style={{ display: 'flex' }}>
           <TextField
             fullWidth
-            size="small"
+            size="medium"
             name="busqueda"
             label="Nombre"
             placeholder="Nombre"

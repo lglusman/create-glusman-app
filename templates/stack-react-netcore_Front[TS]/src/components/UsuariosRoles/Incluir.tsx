@@ -23,7 +23,7 @@ export const Incluir = () => {
         <div style={{ display: 'flex' }}>
           <TextField
             fullWidth
-            size="small"
+            size="medium"
             name="incluir"
             label="Incluir"
             placeholder="Incluir"

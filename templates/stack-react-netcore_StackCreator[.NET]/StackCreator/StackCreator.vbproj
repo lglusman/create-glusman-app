@@ -136,10 +136,10 @@
     <Content Include="Archivos\Cantidad.txt" />
     <Content Include="Archivos\Combo.txt" />
     <Content Include="Archivos\EsPaginado.txt" />
-    <Content Include="Archivos\Incluir.txt" />
     <Content Include="Archivos\index.txt" />
     <Content Include="Archivos\Lista.txt" />
     <Content Include="Archivos\Nuevo.txt" />
+    <Content Include="Archivos\Pages.txt" />
     <Content Include="Archivos\Paginas.txt" />
     <Content Include="Archivos\Seleccionado.txt" />
     <Content Include="Archivos\useEntidad.txt" />

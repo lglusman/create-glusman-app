@@ -2,10 +2,10 @@ import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import { usePermisos } from '../../services'
 import { comboProps } from '../../Types/combotypes'
 
-export const Combo = ({ value, name, disabled, bind }: comboProps) => {
+export const Combo = ({ value = 0, name, disabled, bind }: comboProps) => {
   const { TraerTodos } = usePermisos()
 
-  const { data, isFetching } = TraerTodos({cant: 0, orden: 'descripcionPermiso'})
+  const { data, isFetching } = TraerTodos({cant: 0, orden: 'sitioId'})
 
   if (isFetching) return <div>Cargando...</div>
 
@@ -14,7 +14,7 @@ export const Combo = ({ value, name, disabled, bind }: comboProps) => {
       <FormControl fullWidth>
         <InputLabel id="cbopermisolbl">permiso</InputLabel>
         <Select
-          size='small'
+          size="medium"
           disabled={disabled}
           labelId="cbopermisolbl"
           id="cbopermiso"
@@ -28,7 +28,7 @@ export const Combo = ({ value, name, disabled, bind }: comboProps) => {
           {data?.data?.map((item) => {
             return <MenuItem 
             key={item.id}
-            value={item.id.toString()}>{item.descripcionPermiso}</MenuItem>
+            value={item.id.toString()}>{item.sitioId}</MenuItem>
           })}
         </Select>
       </FormControl>

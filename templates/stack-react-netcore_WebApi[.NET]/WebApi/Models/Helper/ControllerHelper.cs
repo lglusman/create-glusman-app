@@ -5,7 +5,7 @@ namespace WebApi.Models.Helper
 {
     public class ControllerHelper
     {
-        public static IQueryable<T> AddQueryIncludes<T>(IQueryable<T> query, string includes, DbInfraestructura context) where T : class
+        public static IQueryable<T> AddQueryIncludes<T>(IQueryable<T> query, string includes, DbSindicatoDB context) where T : class
         {
             foreach (var item in includes.Split("|"))
             {
@@ -22,7 +22,7 @@ namespace WebApi.Models.Helper
             }
             return query;
         }
-        internal static IQueryable<T> AddQueryIncludes<T>(IQueryable<T> query, string includes, int cantidad, int pagina, string order, DbInfraestructura context) where T : class
+        internal static IQueryable<T> AddQueryIncludes<T>(IQueryable<T> query, string includes, int cantidad, int pagina, string order, DbSindicatoDB context) where T : class
         {
             var efProperties = context.Model.FindEntityType(typeof(T))?.GetNavigations();
             var efProperties1 = context.Model.FindEntityType(typeof(T))?.GetProperties();

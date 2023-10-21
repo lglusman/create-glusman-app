@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { SnackbarProvider } from 'notistack'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Root } from './Root'
 import { ThemeCtxProvider } from './theme'
@@ -18,7 +19,8 @@ const queryClient = new QueryClient({
 })
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  // <React.StrictMode>
+  <React.StrictMode>
+    {/* <Provider store={store}> */}
       <SnackbarProvider>
         <QueryClientProvider client={queryClient}>
           <ThemeCtxProvider>
@@ -27,5 +29,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </SnackbarProvider>
-  // </React.StrictMode>,
+    {/* </Provider> */}
+  </React.StrictMode>,
 )

@@ -2,7 +2,7 @@ import { doDelete, doGet, doPost, doPut } from '..'
 import { UsuarioLogin } from '../../Types/cualquierTipo'
 import { Paginacion } from '../../Types/paginacion'
 import { AutorizacionResponse, typeOpciones } from '../../Types/types'
-import { UsuarioRol } from './UsuarioRol'
+import { UsuarioRol} from './UsuarioRol'
 export class Usuario {
   id: number
   nombre: string
@@ -10,23 +10,23 @@ export class Usuario {
   password: string
   fechaAlta: string
   usuarioAltaId: number
-  fechaBaja?: string
-  usuarioBajaId?: number
-  fechaModificacion?: string
-  usuarioModificacionId?: number
+  fechaBaja? : string
+  usuarioBajaId? : number
+  fechaModificacion? : string
+  usuarioModificacionId? : number
   usuarioRoles: UsuarioRol[]
-  constructor() {
-    this.id = 0
-    this.nombre = ''
-    this.userName = ''
-    this.password = ''
-    this.fechaAlta = ''
-    this.usuarioAltaId = 0
-    this.fechaBaja = ''
-    this.usuarioBajaId = 0
-    this.fechaModificacion = ''
-    this.usuarioModificacionId = 0
-    this.usuarioRoles = new Array<UsuarioRol>()
+   constructor() {
+    this.id = 0;
+    this.nombre = "";
+    this.userName = "";
+    this.password = "";
+    this.fechaAlta = "";
+    this.usuarioAltaId = 0;
+    this.fechaBaja = "";
+    this.usuarioBajaId = 0;
+    this.fechaModificacion = "";
+    this.usuarioModificacionId = 0;
+    this.usuarioRoles = new Array<UsuarioRol>();
   }
 
   static async Loguear({ username, password }: UsuarioLogin): Promise<Paginacion<AutorizacionResponse>> {
@@ -64,15 +64,16 @@ export class Usuario {
     const ret = await doGet(`/Usuarios/${busqueda}__ax?inc=${inc}&cant=${cant}&pag=${pag}&orden=${orden}`)
     return ret
   }
-   static async Guardar(entidad: Usuario) {
+
+  static async Guardar(entidad: Usuario) {
     let resp: Paginacion<Usuario>
     if (entidad.id > 0) {
-      resp = await doPut(`/Usuarios`, entidad)
+       resp = await doPut(`/Usuarios`, entidad)
     } else {
-      resp = await doPost(`/Usuarios`, entidad)
+       resp = await doPost(`/Usuarios`, entidad)
     }
     return resp
-  }
+ }
   static async Eliminar(id: number) {
     return await doDelete(`/Usuarios`, id)
   }

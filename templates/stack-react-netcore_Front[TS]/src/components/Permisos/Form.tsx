@@ -10,9 +10,6 @@ import { Nuevo } from './Nuevo'
 import { Paginas } from './Paginas'
 import { Seleccionado } from './Seleccionado'
 export const Formulario = () => {
-
-
-
   return (
     <Card sx={{ p: 2 }} elevation={2}>
       <Typography component="h1" variant="h4">

@@ -26,7 +26,7 @@ export const useForm = (initialState: any) => {
   return {
     state,
     bind: {
-      onChange: handleChange,
+      onChange: handleChange, 
     },
   };
 };

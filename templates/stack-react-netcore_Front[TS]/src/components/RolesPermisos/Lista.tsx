@@ -32,7 +32,7 @@ export const Lista = () => {
           {ListaRolesPermisos?.data.map((rolpermiso) => (
             <TableRow key={rolpermiso.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell>
-                <IconButton onClick={() => Selecionar(rolpermiso)} size="small" sx={{ p: 0 }}>
+                <IconButton onClick={() => Selecionar(rolpermiso)} size="medium" sx={{ p: 0 }}>
                   <SearchIcon />
                 </IconButton>
               </TableCell>

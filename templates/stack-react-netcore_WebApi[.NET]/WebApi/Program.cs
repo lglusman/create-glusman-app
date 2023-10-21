@@ -21,7 +21,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DbInfraestructura>(options =>
+builder.Services.AddDbContext<DbSindicatoDB>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("constring"));
     options.ReplaceService<IPluralizer, SpanishPluralizer>();
