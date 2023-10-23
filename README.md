@@ -1,16 +1,13 @@
 # Create lgapp
-
 Crear apps basadas en templates
 
-
-## Installation
-
-```bash
-npm install -g create-glusman-app
-```
-
 ## Uso
-
 ```bash
-npx create-lgapp
+npm create lglusman
 ```
+
+## Templates
+
+* stack-react-netcore_Front (TypeScript)
+* stack-react-netcore_StackCreator (.NET)
+* stack-react-netcore_WebApi (Entity Framework Core 7 api)
