@@ -12,8 +12,12 @@ const createDirectoryContents = (templatePath, newProjectPath, projectname) => {
 
     if (stats.isFile()) {
       const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
-      if (file.endsWith('.exe')) {
-        fs.copyFile(origFilePath, writePath);
+      if (file.endsWith('.exe') || file.endsWith('.msi')) {
+        console.log('first')
+        //fs.copyFile(origFilePath, writePath);
+        fs.copyFileSync(origFilePath, writePath)
+
+        console.log('second')
       } else {
         const contents = fs.readFileSync(origFilePath, 'utf8');
 

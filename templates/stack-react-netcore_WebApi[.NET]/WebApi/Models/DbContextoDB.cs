@@ -5,13 +5,13 @@ using WebApi.Models.Entities;
 
 namespace WebApi.Models;
 
-public partial class DbSindicatoDB : DbContext
+public partial class DbContexto : DbContext
 {
-    public DbSindicatoDB()
+    public DbContexto()
     {
     }
 
-    public DbSindicatoDB(DbContextOptions<DbSindicatoDB> options)
+    public DbContexto(DbContextOptions<DbContexto> options)
         : base(options)
     {
     }

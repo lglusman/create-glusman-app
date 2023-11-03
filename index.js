@@ -35,6 +35,27 @@ const QUESTIONS = [
   },
 ];
 
+const consoleFinish = projectype => {
+  switch (projectype.toLowerCase()) {
+    case 'ts':
+      console.log(`${color.green(`npm`)} install`);
+      console.log(`${color.green(`npm`)} run dev`);
+      break;
+    case 'js':
+      console.log(`${color.green(`npm`)} install`);
+      console.log(`${color.green(`npm`)} run dev`);
+      break;
+    case 'instalador':
+      console.log(`${color.green(`setup.exe`)}`);
+      break;
+    case '.net':
+      console.log(`${color.green(`open solution .sln`)}`);
+      break;
+    default:
+      break;
+  }
+};
+
 inquirer.prompt(QUESTIONS).then(answers => {
   const projectChoice = answers['project-choice'];
   const projectName = answers['project-name'];
@@ -47,11 +68,15 @@ inquirer.prompt(QUESTIONS).then(answers => {
   console.log('');
   console.log(`\n${color.yellow(`Proyecto creado:`)}\n`);
   console.log(`${color.green(`cd`)} ${projectName}`);
-  if (
-    projectChoice.toUpperCase().includes('[TS]') ||
-    projectChoice.toUpperCase().includes('[JS]')
-  ) {
-    console.log(`${color.green(`npm`)} install`);
-    console.log(`${color.green(`npm`)} run dev`);
-  }
+  // if (
+  //   projectChoice.toUpperCase().includes('[TS]') ||
+  //   projectChoice.toUpperCase().includes('[JS]')
+  // ) {
+  //   console.log(`${color.green(`npm`)} install`);
+  //   console.log(`${color.green(`npm`)} run dev`);
+  // }
+  const regExp = /\[([^)]+)\]/;
+  const matches = regExp.exec(projectChoice);
+  const tipo = matches[1];
+  consoleFinish(tipo);
 });

@@ -3,7 +3,7 @@ Crear apps basadas en templates
 
 ## Uso
 ```bash
-npm create lglusman
+npm create lglusman@latest
 ```
 
 ## Templates

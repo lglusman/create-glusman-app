@@ -10,15 +10,15 @@ namespace WebApi.Models.Helper
 {
     public class QueryHelper<T> where T : Idtoable, new()
     {
-        private DbSindicatoDB _context;
+        private DbContexto _context;
         private IQueryable<T> QueryInicial;
-        public QueryHelper(DbSindicatoDB context, IQueryable<T> queryInicial)
+        public QueryHelper(DbContexto context, IQueryable<T> queryInicial)
         {
             _context = context;
             QueryInicial = queryInicial;
         }
 
-        public QueryHelper(DbSindicatoDB context, IQueryable<T> queryInicial, string incluye, string orden, int paginaActual, int tamanoPagina) : this(context, queryInicial)
+        public QueryHelper(DbContexto context, IQueryable<T> queryInicial, string incluye, string orden, int paginaActual, int tamanoPagina) : this(context, queryInicial)
         {
             Incluye = incluye;
             Orden = orden;

@@ -15,10 +15,10 @@ namespace WebApi.Services
 {
     public class AutorizacionService : IAutorizacionService
     {
-        private readonly DbSindicatoDB _context;
+        private readonly DbContexto _context;
         private readonly IConfiguration _configuration;
 
-        public AutorizacionService(DbSindicatoDB context, IConfiguration configuration)
+        public AutorizacionService(DbContexto context, IConfiguration configuration)
         {
             _context = context;
             _configuration = configuration;

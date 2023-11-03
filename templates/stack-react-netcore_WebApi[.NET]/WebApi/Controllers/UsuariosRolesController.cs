@@ -16,9 +16,9 @@ namespace WebApi.Controllers
     public class UsuariosRolesController : ControllerBase
     {
 
-        private readonly DbSindicatoDB _context;
+        private readonly DbContexto _context;
 
-        public UsuariosRolesController(DbSindicatoDB context)
+        public UsuariosRolesController(DbContexto context)
         {
             _context = context;
         }
