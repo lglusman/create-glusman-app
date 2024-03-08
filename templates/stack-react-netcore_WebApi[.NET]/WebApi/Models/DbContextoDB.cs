@@ -16,8 +16,6 @@ public partial class DbContexto : DbContext
     {
     }
 
-    public virtual DbSet<NivelEducativo> NivelesEducativos { get; set; }
-
     public virtual DbSet<Permiso> Permisos { get; set; }
 
     public virtual DbSet<Rol> Roles { get; set; }
@@ -35,19 +33,6 @@ public partial class DbContexto : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<NivelEducativo>(entity =>
-        {
-            entity.ToTable("NivelesEducativos", "dim");
-
-            entity.Property(e => e.DescripcionNivelEducativo)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
-            entity.Property(e => e.FechaAlta).HasColumnType("date");
-            entity.Property(e => e.FechaBaja).HasColumnType("date");
-            entity.Property(e => e.FechaModificacion).HasColumnType("datetime");
-        });
-
         modelBuilder.Entity<Permiso>(entity =>
         {
             entity.ToTable("Permisos", "permisos");

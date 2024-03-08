@@ -4,7 +4,7 @@ namespace WebApi.Models
 {
     public abstract class Idtoable
     {
-        public abstract Object ToDTO();
+        public abstract Object? ToDTO();
 
     }
 }
