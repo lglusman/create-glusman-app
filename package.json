@@ -1,6 +1,6 @@
 {
   "name": "create-lglusman",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Instalar proyectos desde el cli",
   "main": "index.js",
   "type": "module",
